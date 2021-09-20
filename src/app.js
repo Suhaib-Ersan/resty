@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 
 import './app.scss';
 
@@ -18,8 +19,13 @@ class App extends React.Component {
     };
   }
 
-  callApi = (requestParams) => {
+  callApi = async (requestParams) => {
     // mock output
+    // if (requestParams.method === "GET") {
+    //   let resData = await axios.get(requestParams.url);
+    // }
+    
+
     const data = {
       count: 2,
       results: [
@@ -27,7 +33,7 @@ class App extends React.Component {
         {name: 'fake thing 2', url: 'http://fakethings.com/2'},
       ],
     };
-    this.setState({data, requestParams});
+    await this.setState({data, requestParams});
   }
 
   render() {
