@@ -1,0 +1,25 @@
+#resultsPre {
+    overflow: auto;
+    height: 500px;
+    padding: 1rem;
+    $shadow: inset 0 0 8px #00000056;
+    -moz-box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+#resultsPreError {
+    overflow: auto;
+    height: 500px;
+    padding: 1rem;
+    $shadow: inset 0 0 8px #00000056;
+    -moz-box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+    box-shadow: $shadow;
+
+    span {
+        font-size: 1rem;
+        color: rgb(238, 48, 111);
+        font-weight: 900;
+        font-size: 1.5rem;
+    }
+}
