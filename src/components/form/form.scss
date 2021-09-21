@@ -1,36 +1,63 @@
 @use "../../variables";
 
-
 form {
-    display: inline-block;
+    display: flex;
     margin: auto;
-    width: 400px;
-    #exampleURL {
-        opacity: 0.5;
-        font-style: italic; 
-    }
-    label {
-        display: flex;
-        margin: 1rem 0;
-        width: 100%;
+    width: auto;
 
-        &.methods {
+    gap: 2rem;
+    #urlAndMethod {
+        display: inline-block;
+        margin: auto;
+        width: 400px;
+        #exampleURL {
+            opacity: 0.5;
+            font-style: italic;
+        }
+        > label {
             display: flex;
-            justify-content: center;
-            span {
-                cursor: pointer;
-                margin-right: 1rem;
-                padding: 0.25rem 0.5rem;
-                background: #ccc;
+            margin: 1rem 0;
+            width: 100%;
+            gap: 0.5rem;
 
-                &:hover,
-                &.active {
-                    background: #fff;
+            > span:first-of-type {
+                position: relative;
+                top: 0.14rem;
+            }
+            &.methods {
+                display: flex;
+                justify-content: center;
+                input {
+                    display: none;
+                    &:checked + label {
+                        color: rgb(43, 43, 43);
+                        background: #ccc;
+                    }
+                }
+                label {
+                    cursor: pointer;
+                    margin-right: 1rem;
+                    padding: 0.25rem 0.5rem;
+                    border: #ccc solid;
+                    border-radius: 0.25rem;
+
+                    color: rgb(43, 43, 43);
+
+                    &:hover,
+                    &.active {
+                        color: rgb(43, 43, 43);
+                        background: rgb(231, 231, 231);
+                    }
                 }
             }
+            input {
+                flex-grow: 5;
+            }
         }
-        input {
-            flex-grow: 5;
-        }
+    }
+    #bodyText {
+        // margin: auto;
+        height: 65px;
+        width: 500px;
     }
 }

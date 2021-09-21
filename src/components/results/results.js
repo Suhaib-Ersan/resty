@@ -9,7 +9,7 @@ export default function Results(props) {
     } else if (props.resultsIsLoading === "done") {
         return (
             <section>
-                <pre id="resultsPre">{props.data ? JSON.stringify(props.data, undefined, 2) : null}</pre>
+                <pre id="resultsPre">{props.data ? JSON.stringify(props.data, undefined, 4) : null}</pre>
             </section>
         );
     } else if (props.resultsIsLoading === "waiting for user input") {
