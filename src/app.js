@@ -31,17 +31,17 @@ class App extends React.Component {
                 console.log(`GET resData >>>>>> `, resData);
                 this.setState({ data, requestParams, resultsIsLoading: "done" });
             } else if ((await requestParams.method) === "POST") {
-                let resData = await axios.post(requestParams.url);
+                let resData = await axios.post(requestParams.url, requestParams.body);
                 let data = resData.data;
                 console.log(`POST resData >>>>>> `, resData);
                 this.setState({ data, requestParams, resultsIsLoading: "done" });
             } else if ((await requestParams.method) === "PUT") {
-                let resData = await axios.put(requestParams.url);
+                let resData = await axios.put(requestParams.url, requestParams.body);
                 let data = resData.data;
                 console.log(`PUT resData >>>>>> `, resData);
                 this.setState({ data, requestParams, resultsIsLoading: "done" });
             } else if ((await requestParams.method) === "DELETE") {
-                let resData = await axios.delete(requestParams.url);
+                let resData = await axios.delete(requestParams.url, requestParams.body);
                 let data = resData.data;
                 console.log(`DELETE resData >>>>>> `, resData);
                 this.setState({ data, requestParams, resultsIsLoading: "done" });
@@ -72,10 +72,12 @@ class App extends React.Component {
             <>
                 <Header />
                 <div id="mainSection">
+                    
+                    <Form handleApiCall={this.callApi} />
                     <div>Request Method: {this.state.requestParams.method}</div>
                     <div>URL: {this.state.requestParams.url}</div>
-                    <Form handleApiCall={this.callApi} />
-                    <Results data={this.state.data} resultsIsLoading={this.state.resultsIsLoading} />
+                    <div id="bodyTitle">Body: {this.state.requestParams.body}</div>
+                    <Results  data={this.state.data} resultsIsLoading={this.state.resultsIsLoading} />
                 </div>
 
                 <Footer />
