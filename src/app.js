@@ -76,6 +76,7 @@ class App extends React.Component {
                     <Form handleApiCall={this.callApi} />
                     <div>Request Method: {this.state.requestParams.method}</div>
                     <div>URL: {this.state.requestParams.url}</div>
+                    <div id="bodyTitle">Body: {this.state.requestParams.body}</div>
                     <Results  data={this.state.data} resultsIsLoading={this.state.resultsIsLoading} />
                 </div>
 
