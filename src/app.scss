@@ -26,6 +26,12 @@ body {
             //     max-height: 100px;
             //     overflow: auto;
             // }
+            #resultsAndHistory {
+                display: flex;
+                gap: 1rem;
+
+                    margin-top: 1rem;
+            }
         }
     }
 }

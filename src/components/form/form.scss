@@ -7,12 +7,30 @@ form {
 
     gap: 2rem;
     #urlAndMethod {
+        $mainColor: rgb(63, 224, 176);
+        $mainColorSub: rgb(30, 167, 126);
         display: inline-block;
         margin: auto;
         width: 400px;
         #exampleURL {
             opacity: 0.5;
             font-style: italic;
+        }
+        #GObutton {
+            padding: 0.25rem 1rem;
+            border-radius: 0.25rem;
+
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            border: $mainColorSub solid;
+            background-color: $mainColor;
+
+            cursor: pointer;
+            transition: 0.05s;
+            &:hover {
+                background-color: $mainColorSub;
+            }
         }
         > label {
             display: flex;
@@ -30,23 +48,30 @@ form {
                 input {
                     display: none;
                     &:checked + label {
-                        color: rgb(43, 43, 43);
-                        background: #ccc;
+                        color: white;
+                        background: $mainColor;
+                        border: $mainColor solid;
+
+                        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.479);
                     }
                 }
                 label {
                     cursor: pointer;
                     margin-right: 1rem;
                     padding: 0.25rem 0.5rem;
-                    border: #ccc solid;
+                    border: $mainColorSub solid;
+
                     border-radius: 0.25rem;
 
-                    color: rgb(43, 43, 43);
+                    color: $mainColorSub;
 
+                    font-weight: 600;
+
+                    transition: 0.05s;
                     &:hover,
                     &.active {
-                        color: rgb(43, 43, 43);
-                        background: rgb(231, 231, 231);
+                        // color: rgb(43, 43, 43);
+                        background: rgb(143, 226, 201);
                     }
                 }
             }
