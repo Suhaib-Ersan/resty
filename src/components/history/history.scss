@@ -1,0 +1,70 @@
+@use "../../variables";
+
+#historyContainer {
+    max-width: 450px;
+    overflow: auto;
+    padding: 1rem;
+    height: 500px;
+    $shadow: 0 5px 8px #00000056;
+    -moz-box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+    box-shadow: $shadow;
+    border-radius: 1rem;
+    width: 100%;
+    .singleHistoryContainer {
+        display: flex;
+        flex-direction: column;
+
+        :first-child {
+            display: flex;
+            align-items: center;
+            .reqParamsCont {
+              width: 85%;
+              border-top: solid rgb(103, 236, 159);
+              border-radius: 0.25em;
+              margin-bottom: 1rem;
+            }
+            .reqParamsMethod {
+                background-color: rgb(103, 236, 159);
+                padding: 0.5rem 1.25rem;
+                margin: 0.5rem;
+
+                border-radius: 0.25rem;
+                box-shadow: 0 2px 4px #00000056;
+            }
+
+            .reqParamsFailed,
+            .reqParamsSucceeded {
+                position: relative;
+                margin-left: 2rem;
+
+                cursor:default;
+                color: white;
+            }
+            .reqParamsFailed::after {
+                z-index: -1;
+                position: absolute;
+                top: 50%;
+                left: 60%;
+                transform: translate(-50%, -50%);
+                content: "";
+                background-color: rgb(248, 73, 102);
+                height: 3rem;
+                width: 3rem;
+                border-radius: 100rem;
+            }
+            .reqParamsSucceeded::after {
+                z-index: -1;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                content: "";
+                background-color: rgb(68, 238, 187);
+                height: 3rem;
+                width: 3rem;
+                border-radius: 100rem;
+            }
+        }
+    }
+}
